@@ -38,10 +38,24 @@ const _ = {
     }  
   },
 
-  has () {
-
+  has (object, key) {
+    return (object[key]  === undefined) ? false: true;
   },
+
+  invert (object) {
+    console.log('before', object);
+    invertedObj = {};
+    for (let property in object) {
+      value = object[property];
+      invertedObj[value] = property;
+    }
+    console.log('after', invertedObj);
+    return invertedObj;
+  },
+
+  findKey () {
     
+  }
 };
 
 // Do not write or modify code below this line.

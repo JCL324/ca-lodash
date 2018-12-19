@@ -8,3 +8,7 @@ For this project we implemented ten existing lodash functions, with some being s
 - ._words
 - ._pad
 - ._has
+- ._invert
+- ._findKey
+
+
