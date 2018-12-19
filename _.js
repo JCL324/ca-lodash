@@ -53,9 +53,25 @@ const _ = {
     return invertedObj;
   },
 
-  findKey () {
+  findKey (object, predicate) {
+    for (let item in object) {
+      let value = object[item];
+      let functionVal = predicate(value);
+      if (functionVal === true) {
+        return item;
+      }
+    }
+    return undefined; //if no truthy value was returned in loop, then it's undefined
+  },
+
+  drop (array, dropCnt = 1) {
+    return array.slice(dropCnt);
+  },
+
+  dropWhile (array, predicate) {
     
-  }
+  },
+
 };
 
 // Do not write or modify code below this line.
