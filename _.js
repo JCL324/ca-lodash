@@ -69,9 +69,22 @@ const _ = {
   },
 
   dropWhile (array, predicate) {
-    
+
   },
 
+  chunk (array, chunkSize = 1) {
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+      let tempChunk = [];
+      for (let j = 0; j < chunkSize; j++) { 
+        tempChunk.push(array[j]);
+      }
+      newArray.push(tempChunk);
+      array = array.slice(chunkSize); //remove processed elements from source array
+    }
+    if (array.length > 0) newArray.push(array); //add final element if unevenly divided
+    return newArray;
+  }
 };
 
 // Do not write or modify code below this line.
