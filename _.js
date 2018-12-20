@@ -1,4 +1,6 @@
-
+/*
+  Capstone project to recreated 10 lodash functions
+*/
 
 const _ = {
   clamp (number, lower, upper) {
@@ -43,13 +45,11 @@ const _ = {
   },
 
   invert (object) {
-    console.log('before', object);
     invertedObj = {};
     for (let property in object) {
       value = object[property];
       invertedObj[value] = property;
     }
-    console.log('after', invertedObj);
     return invertedObj;
   },
 
@@ -69,7 +69,10 @@ const _ = {
   },
 
   dropWhile (array, predicate) {
-
+    let dropNumber = array.findIndex(item = (element, index) => {
+      return !predicate(element, index, array);
+    });
+    return this.drop(array, dropNumber);
   },
 
   chunk (array, chunkSize = 1) {
